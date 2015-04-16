@@ -3,15 +3,12 @@
  var thermostat = new Thermostat();
 
  var thermDisp = function() {
-  //  $('<form action="/therm_disp" method="post"><input type="hidden" name="therm"></form>').submit();
   $.ajax({
     type: "POST",
     url: '/therm_disp',
     data: thermostat.temperature().toString()
   });
-
-
- };
+};
 
  var updateColour = function() {
    if (thermostat.colour() === 'green' ) {
